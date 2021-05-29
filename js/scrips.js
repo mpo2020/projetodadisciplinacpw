@@ -14,28 +14,57 @@ function fecharMascaraBranca(){
 /*fim mascaras*/
 
 let escolhaCamisa;
-let escritaCamisa;
-let menuCamisas = 'lisa';
+let textoModeloCamisa;
+let menuCamisas;
 
 switch(menuCamisas){
     case 'lisa': 
-        escolhaCamisa = "../img/ModeloLisa.png"
-        escritaCamisa = 'Camisa Lisa'
-        document.getElementById('imagemCamisa').src = escolhaCamisa;
-        document.getElementById('escritaModeloCamisa').innerHTML = "bfbndjdsbd";
+        escolhaCamisa = '../img/ModeloLisa.png'
+        textoModeloCamisa = 'Camisa <br> Lisa'        
         break
-    case 2:
-        escolhaCamisa1 = "../img/ModeloMercurio.png";
-        escritaCamisa = 'Camisa de Mercúrio';
+    case 'mercurio':
+        escolhaCamisa = "../img/ModeloMercurio.png";
+        textoModeloCamisa = 'Camisa de Mercúrio';
+        break
+    case 'venus':
+        escolhaCamisa = "../img/ModeloVenus.png";
+        textoModeloCamisa = 'Camisa<br> de Vênus';
+        break
+    case 'terra':
+        escolhaCamisa = "../img/ModeloTerra.png";
+        textoModeloCamisa = 'Camisa<br> de Terra';
+        break
+    case 'marte':
+        escolhaCamisa = "../img/ModeloMarte.png";
+        textoModeloCamisa = 'Camisa<br> de Marte';
+        break
+    case 'jupiter':
+        escolhaCamisa = "../img/ModeloJupiter.png";
+        textoModeloCamisa = 'Camisa<br> de Jupiter';
+        break
+    case 'saturno':
+        escolhaCamisa = "../img/ModeloSaturno.png";
+        textoModeloCamisa = 'Camisa <br> de Saturno';
+        break
+    case 'urano':
+        escolhaCamisa = "../img/ModeloUrano.png";
+        textoModeloCamisa = 'Camisa <br> de Urano';
+        break
+    case 'netuno':
+        escolhaCamisa = "../img/ModeloNetuno.png";
+        textoModeloCamisa = 'Camisa <br> de Netuno';
+        break
+    case 'plutao':
+        escolhaCamisa = "../img/ModeloPlutao.png";
+        textoModeloCamisa = 'Camisa <br> de Plutão';
         break
     default:
         escolhaCamisa = "../img/vazio.png";
-        escritaCamisa = '';
+        textoModeloCamisa = '';
         break
-
 }
 console.log(escritaCamisa)
 console.log(escolhaCamisa)
-// document.getElementById('imagemCamisa').src = escolhaCamisa;
-// document.getElementById('escritaCamisa').innerHTML = escritaCamisa;
+document.getElementById('imagemModeloCamisa').src = escolhaCamisa;
+document.getElementById('textoModeloCamisa').innerHTML = escritaCamisa;
 

@@ -163,6 +163,10 @@ body {
             text-align: center;
         }
         
+        .texto-modelo-camisa { /* essa class foi criada para que o texto com o nome do modelo da camisa fique mais parecido com apresentado no ad2*/
+            font-size: 25px;
+            margin-top: 20px;
+        }
         /*fim camisas*/
         
         /*inicio compras1*/
