@@ -13,7 +13,7 @@ function fecharMascaraBranca(){
 }
 /*fim mascaras*/
 
-
+/* Camisas*/
 function mostrarCamisa(modelo){
 
     let escolhaCamisa;
@@ -60,11 +60,11 @@ function mostrarCamisa(modelo){
             escolhaCamisa = "../img/ModeloPlutao.png";
             textoModeloCamisa = 'Camisa <br> de Plutão';
             break
-        
-    }
+}
     document.getElementById('imagemModeloCamisa').src = escolhaCamisa;
     document.getElementById('textoModeloCamisa').innerHTML = textoModeloCamisa;
 
 
 }
+/* fim camisas*/
 
