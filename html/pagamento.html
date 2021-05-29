@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Camisas de Outro Mundo</title>    
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+        <link rel="stylesheet" href="https://use.typekit.net/qnj1nsq.css">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header>
+            <div class="imglogo"><img src="../img/logocom_topo.png" alt="logoTopo"></img></div>
+        </header>
+        <nav>
+            <div class="menu">
+                <div class="botao"><a href="../index.html" target="_Blank">inicial</a></div>
+                <div class="botao"><a href="../html/mascaras.html" target="_Blank">mascaras</a></div>
+                <div class="botao"><a href="../html/camisas.html" target="_Blank">camisas</a></div>
+                <div class="botao"><a href="../html/compras.html" target="_Blank">compras</a></div>
+            </div>
+        </nav>
+        <section>
+           <div class="divcompras">
+               <form action="">
+                   <fieldset>
+                        <legend>Identificação</legend>
+                        <div class="colpri">
+                            <label for="nome"></label>Nome:</label>
+                        </div>
+                        <div class="divlinha">
+                            <input type="text" name="nome" class="inpgrande"></imput>                           
+                        </div>                       
+                        <div class="colpri">
+                            <label for="email"></label>E-mail:</label>
+                        </div>
+                        <div class="divlinha">
+                            <input type="email" name="email" class="inpgrande"></imput>
+                        </div>                        
+                        <div class="colpri">
+                            <label for="endereço"></label>Endereço:</label>
+                        </div>
+                        <div class="divlinha">
+                            <input type="text" name="endereço" class="impender"></imput>
+                            <fieldset class="fsdir">
+                                <legend>Genero</legend>
+                                <input type="radio" id="mas" name="genero" value="mas"></imput>
+                                <label for="mas">Mas</label>
+                                <input type="radio" id="fem" name="genero" value="fem"></imput>
+                                <label for="mas">Fem</label>
+                                <input type="radio" id="mas" name="genersssso" value="mas"></imput>
+                                <label for="mas">Outro</label>
+                            </fieldset>
+                        </div>
+                        <div class="colpri">
+                            <label for="telefone"></label>Telefone:</label>
+                        </div>
+                        <div class="divlinha">
+                        <input type="tel" name="telefone" class="imptelef"></imput>
+                            <fieldset class="fsdir">
+                                <legend>Nascimento</legend>
+                                <input id="dia" name="nascimento" type="number" class="numdd" min="1" max="31"></imput>
+                                /
+                                <input id="mes" name="nascimento" type="number" class="numdd" min="1" max="12"></imput>
+                                /
+                                <input id="ano" name="nascimento" type="number" class="numqd" min="1900" max="2021" value="1980" ></imput>
+                            </fieldset>
+                        </div>
+                        <div class="colpri">
+                            <label for="Celular"></label>Celular:</label>
+                        </div>
+                        <input type="tel" name="celular" class="imptelef"></imput>                        
+                   </fieldset>
+                   <fieldset>
+                        <legend>Pagamento</legend>
+                        <fieldset class="fsesq">
+                            <legend>Cartão</legend>
+                            <fieldset>
+                                <legend>Bandeira</legend>
+                                <input type="radio" id="visa" name="bandeira" value="visa"></imput>
+                                <label for="visa">Visa</label>
+                                <input type="radio" id="master" name="bandeira" value="master"></imput>
+                                <label for="master">Master</label>
+                                <input type="radio" id="elo" name="bandeira" value="elo"></imput>
+                                <label for="elo">Elo</label>
+                            </fieldset>
+                            <br>
+                            <label for="validade" class="colpri"> Validade:</label>
+                            <input id="mesvalidade" name="validade" type="number" class="numdd" min="1" max="12" value="4"></imput>
+                            <label for="validade">/</label>
+                            <input id="anovalidade" name="validade" type="number" class="numqd" min="2021" max="2050" value="2021"></imput>    
+                            <br>
+                            <br>
+                            <div class="colpri">
+                                <Label id="ncartao">Numero:</Label>
+                            </div>
+                            <input type="text" name="ncartao" id="ncartao" class="numcard"></input>
+                        </fieldset>
+                        <div class="fsdir">
+                            <input id="comprasfeitas" type="text" class="comprasfeitas"></imput>
+                            <br>                        
+                            <div class="divvalor">
+                                <br>                                
+                                <label for="total">Valor R$&nbsp</label>                          
+                            <input type="text" id="valorrs" readonly class="impmedio"></imput> 
+                            </div>                            
+                        </div>
+                    </fieldset>
+                    <div class="divbotoes">                        
+                        <input type="button" value="enviar"></imput> 
+                        <input type="button" value="Limpar"></imput>                           
+                    </div>
+               </form>              
+           </div>      
+        </section>
+        <footer>
+            <div class="ender">
+                Via Lactea, 1234 / tel:(21)98765-4321 / contato@camplanetas.com.br
+            </div>
+        </footer>
+    </body>
+
+</html>

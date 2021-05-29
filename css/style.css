@@ -1,0 +1,314 @@
+
+body {
+    background-color: #551177;
+    font-family: 'Open Sans'; font-size: 16px; color: #FFFF00;
+}
+    nav {
+        display:block;   
+        font-family: 'muli' sans-serif; font-size: 18px;
+        border-bottom: 2px solid;
+        padding: 4px;    
+        margin: 2px;
+        text-align: center;
+    }
+        .menu {
+            margin: 1px auto;
+            
+        }
+        .botao {
+            display: inline-block;
+            margin: 0px 4px 0px;
+            padding: 0px 4px 0px;
+            width: 120px;           
+        }
+    header {
+        display:block; 
+        padding: 0px;
+        border-bottom: 0px;
+        text-align: center;
+    }
+        .imglogo {
+            margin-bottom: 4px;
+            padding-bottom: 4px;
+        }
+
+    section {
+        display:block;
+    }
+        .apres { /* Pagina principal*/
+            text-align: center;
+            font-size: 18px;
+        }
+        /*inicio mascaras*/
+        
+        .imgmasc {
+            display: block;
+            border: 4px orange solid;
+            margin: auto;            
+        }
+        .lisdescricao {
+            font-size: 18px;
+        }
+        .liscarac {
+            list-style-image:url(../img/seta18.png);
+            font-size: 16px;
+        }
+        li {
+            padding: 10px;
+            padding-top: 10px;
+        }
+        img.cor-mascaras {
+            display: inline-flex;
+            border: 2px orange solid;
+            margin: 5px;
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            cursor: pointer;
+        }        
+        div.alinhamento-texto-cores {/* foi usado o table-cell na div para poder alinhar o as imagens e o texto com o mesmo centralizado verticalmente no meio, foi necessário englobar na mesma div o texto e a <li> para que os mesmos não ficassem desalinhados entre si*/
+            display: table-cell;
+            margin: 0px;
+            padding: 0px;
+            height: auto;
+            vertical-align: middle;
+        }
+        .titulo-mascara {/* como o quadro 1 pede que a margin de ilusmascara seja alto o titulo ficou colado na imagem, a quebra de linha <br> fazia com que a distancia entre os 2 ficasse muito maior que a apresentada no documento do ad2, então criei essa classe para resolver esse problema*/
+            margin-bottom: 20px;
+        }
+        .modal-mascaras {
+            display: none; 
+            position: fixed;            
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation-name: aparecendo;
+            animation-duration: 800ms;
+            
+        }
+            @keyframes aparecendo{
+               from{opacity: 0;}
+               to{opacity: 1;}               
+            }
+        .modal-mascaras-conteudo {
+            width: 250px;
+            height: 270px;           
+            padding: 10px;
+            position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            text-align: center;
+            margin: auto;
+            font-weight: bold;
+            font-size: 30px;
+            opacity: 1; 
+            background-color: #551177;          
+        }
+        .botao-mascaras {
+            padding: 3px 12px;
+            cursor: pointer;
+        }
+        /*fim mascaras*/
+
+        /*inicio camisas*/
+        .tabinfo { 
+            border-collapse: collapse;
+            background-color: #ffffcc;
+            color: #2555aa;
+            margin: auto;
+            font-family: 'Open Sans';         
+        }
+        td, th {
+            border: 3px solid;
+            border-color: #77ccdd;
+            padding: 6px 6px 4px 6px;
+            text-align: center;
+        }
+        .linth {
+            background-color: #0099DD;
+            color: #FFFFFF; 
+            text-align: center;
+            vertical-align: middle;            
+        }
+        .colth {
+            color: #005599;
+            background-color: #FFFFFF;
+            width: 104px;
+            text-align: center;
+        }
+        .imgcam {
+            width: 250px;
+            height: 312px;
+        }
+        .tabint {
+            width: 100%;
+            margin: 0;
+        }
+        .thint {
+            width: 50%;
+        }
+        .imgint {
+            width: 30px;
+            height: 30px;
+        }
+        .imgcel {
+            text-align: center;
+            background-color: #fff;
+        }
+        .colmenu {
+            width: 120px;
+            text-align: center;
+        }
+        
+        /*fim camisas*/
+        
+        /*inicio compras1*/
+        .divcompras {
+            color: #2255aa;
+            background-color: #eeeeaa;
+            padding: 6px 6px 15px 6px; 
+            margin: 20px auto;
+            border: 2px solid;
+            border-color: #77ccdd;
+            width: max-content;/*usado para que o field ficasse do tamanho proporcional*/
+        }
+        .listacompras {
+            width: 230px;
+            height: 230px;
+            float: right;
+            margin-top: 8px;
+            margin-left: 10px;
+            /*readonly?*/
+        }
+        .collabselprod {
+            /*elemento de entrada alinha a esquerda*/
+            width: auto;/* se usar o tamanho pedido de 260px fica desalinhado entao optei por usar o valor auto para que ocupe toda a extenção possivel sem desalinhar*/
+            height: 40px;
+            float: left;
+        }
+        .colselprod {
+            width: 160px;
+            float: right;
+        }
+        .linhaprodsel {
+            width: 250px;
+            margin-bottom: 6px;
+            float: left;
+        }
+        .elemesq {
+            float: left;
+            display: block;
+            
+        }
+        .elemdir {
+            float: right;
+            display: block;
+        }
+        .impmedio {
+            width: 80px;
+            float: right;
+            
+        }
+        .divbotoes {
+            text-align: right;
+            margin: 20px 10px 0px 10px;
+        }
+        .tipoprod {
+            font-weight: bolder;
+        }
+        .prodsel {
+            margin-left: 20px;
+        }
+        .divvalor {
+            float: right;
+        }
+        /*fim compras1*/
+        
+        /*inicio pagamento*/
+        .fsesq {
+            float: left;
+            display: inline;
+            margin: 0px;
+        }
+        .fsdir {
+            float: right;
+            display: inline;
+            margin: 0px;            
+        }
+        .inpgrande {
+            width: 400px;            
+        }
+        .impncc { 
+            width: 130px;
+        }
+        .imptelef {
+            width: 90px;
+        }
+        .impender {
+            width: 180px;/*tive que diminuir width pois estava se chocando com o genero*/
+            height: 60px;
+            
+        }
+        .numdd {
+            width: 30px;            
+        }
+        .numqd {
+            width: 50px;
+        }
+        .divlinha { 
+            margin-bottom: 6px;
+        }
+        .colpri{
+            float: left;
+            display: block;
+            width: 90px;
+            margin-bottom: 6px;
+        }
+        .colpricompras {
+            float: left;
+            display: block;
+            width: 86px;
+        }
+        .colpripag {
+            float: left;
+            display: block;
+            width: 250px;
+        }
+        .comprasfeitas {
+            width: 230px;
+            height: 180px;
+            float: right;
+            margin-top: 8px;
+            margin-left: 10px;
+        }
+        .divpagesq {
+            float: left;
+            width: 100px;            
+            display: inline;
+        }
+        .numcard {
+            width: 130px;
+        }
+       
+        /*fim pagamento*/
+    footer {
+        display:block;        
+    }
+    .ender {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 4px;
+            border-top: 2px solid;
+            padding: 10px;
+        }
+    a {
+        text-decoration: none;
+        color: #FFFF00;
+    }
+    a:visited {
+        color: #EEEE00;
+    }
+    
