@@ -58,13 +58,10 @@ switch(menuCamisas){
         escolhaCamisa = "../img/ModeloPlutao.png";
         textoModeloCamisa = 'Camisa <br> de Plutão';
         break
-    default:
-        escolhaCamisa = "../img/vazio.png";
-        textoModeloCamisa = '';
-        break
+    
 }
-console.log(escritaCamisa)
+console.log(textoModeloCamisa)
 console.log(escolhaCamisa)
-document.getElementById('imagemModeloCamisa').src = escolhaCamisa;
-document.getElementById('textoModeloCamisa').innerHTML = escritaCamisa;
+//document.getElementById('imagemModeloCamisa').src = escolhaCamisa;
+//document.getElementById('textoModeloCamisa').innerHTML = textoModeloCamisa;
 
