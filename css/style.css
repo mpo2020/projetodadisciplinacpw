@@ -162,10 +162,12 @@ body {
             width: 120px;
             text-align: center;
         }
+
         
-        .texto-modelo-camisa { /* essa class foi criada para que o texto com o nome do modelo da camisa fique mais parecido com apresentado no ad2*/
+        .texto-modelo-camisa { /* essa class foi criada para que o texto com o nome do modelo da camisa fique mais parecido com apresentado no ad2, também coloquei o altura da div de 70px para que com a mudança da parte onde não tem texto para o texto com o nome dos modelos das camisas não haja mudança visual no tamanho da tabela!*/
             font-size: 25px;
             margin-top: 20px;
+            height: 70px;
         }
         /*fim camisas*/
         
