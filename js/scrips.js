@@ -13,6 +13,29 @@ function fecharMascaraBranca(){
 }
 /*fim mascaras*/
 
-let escolhaCamisa
+let escolhaCamisa;
+let escritaCamisa;
+let menuCamisas = 'lisa';
 
+switch(menuCamisas){
+    case 'lisa': 
+        escolhaCamisa = "../img/ModeloLisa.png"
+        escritaCamisa = 'Camisa Lisa'
+        document.getElementById('imagemCamisa').src = escolhaCamisa;
+        document.getElementById('escritaModeloCamisa').innerHTML = "bfbndjdsbd";
+        break
+    case 2:
+        escolhaCamisa1 = "../img/ModeloMercurio.png";
+        escritaCamisa = 'Camisa de Mercúrio';
+        break
+    default:
+        escolhaCamisa = "../img/vazio.png";
+        escritaCamisa = '';
+        break
+
+}
+console.log(escritaCamisa)
+console.log(escolhaCamisa)
+// document.getElementById('imagemCamisa').src = escolhaCamisa;
+// document.getElementById('escritaCamisa').innerHTML = escritaCamisa;
 

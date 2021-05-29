@@ -5,6 +5,7 @@
         <link href="../css/style.css" rel="stylesheet" type="text/css">
         <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
         <link rel="stylesheet" href="https://use.typekit.net/qnj1nsq.css">
+        <script type="text/javascript" src="../js/scrips.js"></script>
         <meta charset="UTF-8">
     </head>
     <body>
@@ -29,35 +30,42 @@
                 </tr>
                 <tr>
                     <td rowspan="10" class=colth> Desenhos</td>                    
-                    <td class="colmenu"><span onclick="" class="">Lisa</span></td>
-                    <td rowspan="10" colspan="2" class="imgcel"><div>Camisa da Terra</div><div><img class="imgcam" id="modeloCamisa" src="../img/vazio.png" alt="camisa vazia"></div></td>
+                    <td class="colmenu"><span onclick="document.getElementById('imagemCamisa').src ='../img/ModeloLisa.png'" class="modeloclicavel">Lisa</span></td>
+                    <td rowspan="10" colspan="2" class="imgcel">
+                        <div>
+                            <span id="escritaModeloCamisa">Camisa<br>da Terra</span>
+                        </div>
+                        <div>
+                            <img class="imgcam" id="imagemCamisa" src="../img/vazio.png" alt="vazio">
+                        </div>
+                    </td>
                 </tr>
                 <tr>                    
-                    <td><span onclick="" class="">Mercúrio</span></td>
+                    <td><span onclick="menuCamisas = 'lisa'" class="modeloclicavel">Mercúrio</span></td>
                 </tr>
                 <tr>                    
-                    <td><span onclick="" class="">Vênus</span></td>
+                    <td><span onclick="alert(menuCamisas)" class="modeloclicavel">Vênus</span></td>
                 </tr>
                 <tr>                    
-                    <td><span onclick="" class="">Terra</span></td>
+                <td><span onclick="alert('escritaCamisa')" class="modeloclicavel">Terra</span></td>
                 </tr>
                 <tr>                    
-                    <td><span onclick="" class="">Marte</span></td>
+                    <td><span onclick="" class="modeloclicavel">Marte</span></td>
                 </tr>
                 <tr>                    
-                    <td><span onclick="" class="">Jupiter</span></td>
+                    <td><span onclick="" class="modeloclicavel">Jupiter</span></td>
                 </tr>
                 <tr>                    
-                    <td><span onclick="" class="">Saturno</span></td>
+                    <td><span onclick="" class="modeloclicavel">Saturno</span></td>
                 </tr>
                 <tr>                    
-                    <td><span onclick="" class="">Urano</span></td>
+                    <td><span onclick="" class="modeloclicavel">Urano</span></td>
                 </tr>
                 <tr>                    
-                    <td><span onclick="" class="">Netuno</span></td>
+                    <td><span onclick="" class="modeloclicavel">Netuno</span></td>
                 </tr>
                 <tr>                    
-                    <td><span onclick="" class="">Plutão</span></td>
+                    <td><span onclick="" class="modeloclicavel">Plutão</span></td>
                 </tr>
 
                 <tr class="linth">

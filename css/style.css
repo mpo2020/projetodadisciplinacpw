@@ -292,6 +292,9 @@ body {
         .numcard {
             width: 130px;
         }
+        .modeloclicavel {
+            cursor: pointer;
+        }
        
         /*fim pagamento*/
     footer {
