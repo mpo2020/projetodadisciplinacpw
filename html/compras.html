@@ -6,6 +6,7 @@
         <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
         <link rel="stylesheet" href="https://use.typekit.net/qnj1nsq.css">
         <meta charset="UTF-8">
+        <script type="text/javascript" src="../js/scrips.js"></script>
     </head>
     <body>
         <header>
@@ -22,32 +23,90 @@
         <section>
            <div class="divcompras">
                <form action="../html/pagamento.html"> 
+                    <fieldset>
+                        <legend>Identificação</legend>
+                        <div class="colpri">
+                            <label for="nome"></label>Nome:</label>
+                        </div>
+                        <div class="divlinha">
+                            <input type="text" name="nome" class="inpgrande"></imput>                           
+                        </div>                       
+                        <div class="colpri">
+                            <label for="email"></label>E-mail:</label>
+                        </div>
+                        <div class="divlinha">
+                            <input type="email" name="email" class="inpgrande"></imput>
+                        </div>                        
+                        <div class="colpri">
+                            <label for="endereço"></label>Endereço:</label>
+                        </div>
+                        <div class="divlinha">
+                            <input type="text" name="endereço" class="impender"></imput>
+                            <fieldset class="fsdir">
+                                <legend>Genero</legend>
+                                <input type="radio" id="mas" name="genero" value="mas"></imput>
+                                <label for="mas">Mas</label>
+                                <input type="radio" id="fem" name="genero" value="fem"></imput>
+                                <label for="mas">Fem</label>
+                                <input type="radio" id="mas" name="genersssso" value="mas"></imput>
+                                <label for="mas">Outro</label>
+                            </fieldset>
+                        </div>
+                        <div class="colpri">
+                            <label for="telefone"></label>Telefone:</label>
+                        </div>
+                        <div class="divlinha">
+                        <input type="tel" name="telefone" class="imptelef"></imput>
+                            <fieldset class="fsdir">
+                                <legend>Nascimento</legend>
+                                <input id="dia" name="nascimento" type="number" class="numdd" min="1" max="31"></imput>
+                                /
+                                <input id="mes" name="nascimento" type="number" class="numdd" min="1" max="12"></imput>
+                                /
+                                <input id="ano" name="nascimento" type="number" class="numqd" min="1900" max="2021" value="1980" ></imput>
+                            </fieldset>
+                        </div>
+                        <div class="colpri">
+                            <label for="Celular"></label>Celular:</label>
+                        </div>
+                        <input type="tel" name="celular" class="imptelef"></imput>   
+                    </fieldset>
                     <fieldset class="">
                         <Legend>Seleção de Produtos e Lista de Compras</Legend>
                         <fieldset class="elemesq">
                             <legend>Selecionado</legend>
-                            <label for="produto" class="collabselprod">Produto:</label>
-                            <select id="produto" class="colselprod">
-                                <option value="nada" selected>---</option>
+                            <label class="collabselprod">Produto</label>
+                            <select id="produto" class="colselprod" onchange="ehMascara()">
+                                <option value="nada" id=""selected>---</option>
                                 <optgroup label="Camisa">
-                                <option value="lisa">Lisa</option>
-                                <option value="mercurio">Mercúrio</option>
-                                <option value="venus">Venus</option>
-                                <option value="terra">Terra</option>
-                                <option value="marte">Marte</option>
-                                <option value="jupiter">Jupiter</option>
-                                <option value="saturno">Saturno</option>
-                                <option value="urano">Urano</option>
-                                <option value="netuno">Netuno</option>
-                                <option value="plutao">Plutão</option>
+                                <option value="camisaLisa">Lisa</option>
+                                <option value="camisaMercurio">Mercúrio</option>
+                                <option value="camisaVenus">Venus</option>
+                                <option value="camisaTerra">Terra</option>
+                                <option value="camisaMarte">Marte</option>
+                                <option value="camisaJupiter">Jupiter</option>
+                                <option value="camisaSaturno">Saturno</option>
+                                <option value="camisaUrano">Urano</option>
+                                <option value="camisaNetuno">Netuno</option>
+                                <option value="camisaPlutao">Plutão</option>
                                 <optgroup label="Mascara">
-                                <option value="lisa">Lisa</option>
-                                <option value="cometa">Cometa</option>                              
+                                <option value="mascaraLisa">Lisa</option>
+                                <option value="mascaraCometa">Cometa</option>                              
+                            </select>
+                            <br>
+                            <br>                            
+                            <label for="produto" class="collabselprod">Cor:</label>
+                            <select id="corProduto" class="colselprod" disabled>
+                                <option value="---" selected>---</option>
+                                <option value="preto">Preto</option>
+                                <option value="branco">Branco</option>
+                                <option value="azul" id="produtoAzul">Azul</option>
+                                <option value="lilas" id="produtoLilas">Lilas</option>                            
                             </select>
                             <br>
                             <br>
                             <label for="produto" class="collabselprod">Tamanho:</label>
-                            <select id="produto" class="colselprod">
+                            <select id="tamanhoProduto" class="colselprod" disabled>
                                 <option value="nada" selected>---</option>
                                 <option value="pequena">Pequena</option>
                                 <option value="media">Media</option>
@@ -56,22 +115,12 @@
                             </select>
                             <br>
                             <br>
-                            <label for="produto" class="collabselprod">Cor:</label>
-                            <select id="produto" class="colselprod">
-                                <option value="---" selected>---</option>
-                                <option value="preto">Preto</option>
-                                <option value="branco">Branco</option>
-                                <option value="azul">Azul</option>
-                                <option value="lilas">Lilas</option>                            
-                            </select>
-                            <br>
-                            <br>
                             <label for="produto" class="collabselprod">Modelo:</label>
-                            <select id="produto" class="colselprod">
+                            <select id="modeloProduto" class="colselprod" disabled>
                                 <option value="---" selected>---</option>
                                 <option value="t-shirt">T-Shirt</option>
                                 <option value="babylook">Baby Look</option>
-                                <option value="semmanga">Sem Manga</option>                         
+                                <option value="semManga">Sem Manga</option>                         
                             </select>
                             <br>
                             <br>

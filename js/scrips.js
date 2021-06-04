@@ -63,8 +63,30 @@ function mostrarCamisa(modelo){
 }
     document.getElementById('imagemModeloCamisa').src = escolhaCamisa;
     document.getElementById('textoModeloCamisa').innerHTML = textoModeloCamisa;
-
-
 }
 /* fim camisas*/
+/*Compras*/
+
+function ehMascara() {
+    
+    let escolhaProduto = document.getElementById('produto').value;
+    let tipoProduto = escolhaProduto.substring(0,6);
+
+    if (tipoProduto === 'mascar') {
+        document.getElementById("corProduto").disabled = false;
+        document.getElementById("tamanhoProduto").disabled = true;
+        document.getElementById("modeloProduto").disabled = true;    
+        document.getElementById("produtoAzul").disabled = true;
+        document.getElementById("produtoLilas").disabled = true;
+            
+    } else if(tipoProduto=== 'camisa'){
+        document.getElementById("corProduto").disabled = false;
+        document.getElementById("tamanhoProduto").disabled = false;
+        document.getElementById("modeloProduto").disabled = false;            
+    }
+    console.log('teste')
+}
+
+
+
 
