@@ -22,7 +22,7 @@
         </nav>
         <section>
            <div class="divcompras">
-               <form action="../html/pagamento.html"> 
+               <form name="formularioCompra" action="../html/pagamento.html"> 
                     <fieldset>
                         <legend>Identificação</legend>
                         <div class="colpri">
@@ -76,64 +76,64 @@
                         <fieldset class="elemesq">
                             <legend>Selecionado</legend>
                             <label class="collabselprod">Produto</label>
-                            <select id="produto" class="colselprod" onchange="ehMascara()">
-                                <option value="nada" id=""selected>---</option>
+                            <select id="produto" name="nomeProduto" class="colselprod" onchange="habilitaCor(), validacaoDaSelecaoDosProdutos()">
+                                <option value="vazio" id=""selected>---</option>
                                 <optgroup label="Camisa">
-                                <option value="camisaLisa">Lisa</option>
-                                <option value="camisaMercurio">Mercúrio</option>
-                                <option value="camisaVenus">Venus</option>
-                                <option value="camisaTerra">Terra</option>
-                                <option value="camisaMarte">Marte</option>
-                                <option value="camisaJupiter">Jupiter</option>
-                                <option value="camisaSaturno">Saturno</option>
-                                <option value="camisaUrano">Urano</option>
-                                <option value="camisaNetuno">Netuno</option>
-                                <option value="camisaPlutao">Plutão</option>
+                                <option value="CamisaLisa">Lisa</option>
+                                <option value="CamisaMercurio">Mercúrio</option>
+                                <option value="CamisaVenus">Venus</option>
+                                <option value="CamisaTerra">Terra</option>
+                                <option value="CamisaMarte">Marte</option>
+                                <option value="CamisaJupiter">Jupiter</option>
+                                <option value="CamisaSaturno">Saturno</option>
+                                <option value="CamisaUrano">Urano</option>
+                                <option value="CamisaNetuno">Netuno</option>
+                                <option value="CamisaPlutao">Plutão</option>
                                 <optgroup label="Mascara">
-                                <option value="mascaraLisa">Lisa</option>
-                                <option value="mascaraCometa">Cometa</option>                              
+                                <option value="MascaraLisa">Lisa</option>
+                                <option value="MascaraCometa">Cometa</option>                              
                             </select>
                             <br>
                             <br>                            
                             <label for="produto" class="collabselprod">Cor:</label>
-                            <select id="corProduto" class="colselprod" disabled>
-                                <option value="---" selected>---</option>
-                                <option value="preto">Preto</option>
-                                <option value="branco">Branco</option>
-                                <option value="azul" id="produtoAzul">Azul</option>
-                                <option value="lilas" id="produtoLilas">Lilas</option>                            
+                            <select id="corProduto" name="nomeCor" class="colselprod" onchange="validacaoDaSelecaoDosProdutos()" disabled>
+                                <option value="vazio" selected>---</option>
+                                <option value="Preto">Preto</option>
+                                <option value="Branco">Branco</option>
+                                <option value="Azul" id="produtoAzul">Azul</option>
+                                <option value="Lilas" id="produtoLilas">Lilas</option>                            
                             </select>
                             <br>
                             <br>
                             <label for="produto" class="collabselprod">Tamanho:</label>
-                            <select id="tamanhoProduto" class="colselprod" disabled>
-                                <option value="nada" selected>---</option>
-                                <option value="pequena">Pequena</option>
-                                <option value="media">Media</option>
-                                <option value="grande">Grande</option>
-                                <option value="extragrande">Extragrande</option>                     
+                            <select id="tamanhoProduto" name="nomeTamanho" class="colselprod" onchange="validacaoDaSelecaoDosProdutos()" disabled>
+                                <option value="vazio" selected>---</option>
+                                <option value="P">Pequena</option>
+                                <option value="M">Media</option>
+                                <option value="G">Grande</option>
+                                <option value="GG">Extragrande</option>                     
                             </select>
                             <br>
                             <br>
                             <label for="produto" class="collabselprod">Modelo:</label>
-                            <select id="modeloProduto" class="colselprod" disabled>
-                                <option value="---" selected>---</option>
-                                <option value="t-shirt">T-Shirt</option>
-                                <option value="babylook">Baby Look</option>
-                                <option value="semManga">Sem Manga</option>                         
+                            <select id="modeloProduto" name="nomeModelo" class="colselprod" onchange="validacaoDaSelecaoDosProdutos()" disabled>
+                                <option value="vazio" selected>---</option>
+                                <option value="TS">T-Shirt</option>
+                                <option value="BL">Baby Look</option>
+                                <option value="SM">Sem Manga</option>                         
                             </select>
                             <br>
                             <br>
-                            <input type="text" class="linhaprodsel" readonly>
+                            <input type="text" class="linhaprodsel" id="textoSelecaoProdutos"  value="" readonly>
                             <br><br>
-                            <input type="button" value="Comprar"></imput>                           
+                            <input type="button" onclick="comprarProduto()" value="Comprar"></imput>                           
                             <div class="divvalor">
                                 <label for="rs">R$&nbsp</label>
-                                <input type="text" id="rs" readonly class="impmedio"></imput>  
+                                <input type="text"  id="precoProduto" value="" readonly class="impmedio"></imput>  
                             </div>                         
                         </fieldset>
                         <div class="elemdir">                         
-                            <textarea name="lista" class="listacompras" readonly></textarea>
+                            <textarea name="lista" class="listacompras" id="listaProdutos" readonly></textarea>
                             <br>
                             <br>
                             <div class="divvalor">
@@ -141,13 +141,13 @@
                                 <br>
                                 <br>
                                 <label for="total">Total R$&nbsp</label>
-                                <input type="text" id="total" readonly class="impmedio"></imput> 
+                                <input type="text" id="totalPreco" readonly class="impmedio"></imput> 
                             </div>
                         </div>
                     </fieldset>
                     <div class="divbotoes">                        
-                        <input type="submit" value="Continuar" target="" ></imput> 
-                        <input type="button" value="Limpar"></imput>                           
+                        <input type="submit" onclick="return estaPronto()" value="Continuar" target="" ></imput> 
+                        <input type="button" value="Limpar" onclick="limparCampos()"></imput>                           
                     </div>
                 </form>    
            </div>      
