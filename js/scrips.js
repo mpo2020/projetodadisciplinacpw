@@ -18,7 +18,7 @@ function fecharMascaraBranca(){
 
 /* Camisas*/
 /*--------------------------------------------------QUESTÃO2--------------------------------------------------------------------------------------------------*/
-function mostrarCamisa(modelo){/* essa função quando chamada no html troca a a escrita e a foto no campo indica na questão.*/
+function mostrarCamisa(modelo){/* essa função quando chamada no html troca a o texto com o nome do produto  e a foto no campo indicado pela questão.*/
 
     let escolhaCamisa;
     let textoModeloCamisa;
@@ -98,22 +98,23 @@ function habilitaCor(){ /* Esta função usa resultado da função ehMascara par
     let tipoProduto = ehMascara();
 
     if (tipoProduto === true) {
+
         document.getElementById("corProduto").disabled = false;
         document.getElementById("tamanhoProduto").disabled = true;
         document.getElementById("modeloProduto").disabled = true;    
         document.getElementById("produtoAzul").disabled = true;
-        document.getElementById("produtoLilas").disabled = true;
-   
-            
+        document.getElementById("produtoLilas").disabled = true;   
+           
     } else if(tipoProduto=== false){
+
         document.getElementById("corProduto").disabled = false;
         document.getElementById("tamanhoProduto").disabled = false;
         document.getElementById("modeloProduto").disabled = false;
         document.getElementById("produtoAzul").disabled = false;
-        document.getElementById("produtoLilas").disabled = false;
-        
-        
+        document.getElementById("produtoLilas").disabled = false;        
+    
     }
+
     zerarSelecaoDeProdutos();   
 
 }
@@ -121,7 +122,7 @@ function habilitaCor(){ /* Esta função usa resultado da função ehMascara par
 /*------------------------------------------------------------QUESTÃO 5--------------------------------------------------------------------------------------*/
 /*---------------------------------------------------------------(a)-----------------------------------------------------------------------------------------*/
 
-function estaPronto() {
+function estaPronto() { /* esse função ao ser chamada teste se todos os os campos da seleção de produtos estão preenchidos  caso sim retorna verdadeiro, caso não retorna falso. Também foi adicionado um teste para saber se era mascara ou camisa pois campos diferentes deviam esta preenchidos para cada produto.(para camisa produto, cor, tamanho, e modelo) e para (mascara produto e cor) para esse teste foi utilizado o retorno da função é ehMascara para diferenciar se era mascara ou camisa dentro desta função*/
 
     let tipoProdutoEstaPronto = ehMascara()
     let validacaoProduto;
@@ -136,9 +137,8 @@ function estaPronto() {
         return true;
         } else {
             return false;
-        }
-               
-            
+        }               
+             
     } else if(tipoProdutoEstaPronto === false){
         
         validacaoProduto = document.forms["formularioCompra"]["nomeProduto"].value;
@@ -156,7 +156,7 @@ function estaPronto() {
 
 /*---------------------------------------------------------------(b)-----------------------------------------------------------------------------------------*/
 
-function validacaoDaSelecaoDosProdutos() {
+function validacaoDaSelecaoDosProdutos() { /* essa função usa o return da função estaPronto() para que se o resultado for true ela joga as descrições abreviadas e o preço para seus devidos campos, e tambem foi adicionado um teste para saber se e mascara ou camisa usando o return da função ehMascara pois quando for mascar não seria pego valores dos campos tamanho e modelo */
     
     let tipoProduto = ehMascara();
     let validacaoProdutoCamposPreenchidos = estaPronto();
@@ -204,7 +204,7 @@ function validacaoDaSelecaoDosProdutos() {
 
 /*---------------------------------------------------------------(c)-----------------------------------------------------------------------------------------*/
 
-function limparCampos() {
+function limparCampos() { /* essa função ao ser chamada clicando no botão limpar reseta para como estavam quando a pagina foi carregada os campos preenchidos da field seleção de produtos e lista de compras*/
     
     document.getElementById("produto").value = "vazio";
     document.getElementById("corProduto").value = "vazio";
@@ -222,99 +222,38 @@ function limparCampos() {
 }
 
 /*---------------------------------------------------------------(d)-----------------------------------------------------------------------------------------*/
+let somaPrecos = 0
+let concatenacaoListaProdutos = ''
 
-function comprarProduto() {
+/* as duas variaveis acima foram declaradas em escopo global e atribuido valor a elas nesse escopo pois comprarProduto()*/
+
+function comprarProduto() { /* essa função é chamada através do clique no botão comprar ela usa o return da função estaPronto() caso está resulte em true ela cria a lista de comrpa com o produto selecionado concatenando varios deles na <textarea> e joga o preço  para o total, e somando com o preço de cada produto escolhido, a função estaPronto() retorne falso um alert aparece na tela*/
     let comprarProdutoVerificacao = estaPronto()
-
+    
     if (comprarProdutoVerificacao === true){
+
+        let especificacaoProdutoListaCompra
+        let precoTotalProdutoListaCompra
 
         especificacaoProdutoListaCompra = document.getElementById('textoSelecaoProdutos').value
         precoTotalProdutoListaCompra = document.getElementById('precoProduto').value
-        precoTotalProdutoListaCompra = parseFloat(precoTotalProdutoListaCompra)
-        precoTotalProdutoListaCompra = precoTotalProdutoListaCompra  + precoTotalProdutoListaCompra 
-        campoListaProdutos = document.getElementById('listaProdutos').value
+        precoTotalProdutoListaCompra = parseInt(precoTotalProdutoListaCompra)
 
-        
-        if (campoListaProdutos !== '' && precoTotalProdutoListaCompra !== ' ' ) {
-            console.log('bububu')
-        } else {
-            document.getElementById('listaProdutos').value = especificacaoProdutoListaCompra;
-            document.getElementById('totalPreco').value =  + precoTotalProdutoListaCompra 
-            console.log('gululu')
-        }
+        somaPrecos = somaPrecos +  precoTotalProdutoListaCompra        
+        concatenacaoListaProdutos = concatenacaoListaProdutos +  especificacaoProdutoListaCompra + `\n`
 
+        document.getElementById('listaProdutos').value = concatenacaoListaProdutos;
+        document.getElementById('totalPreco').value =  somaPrecos
     } else {
         alert('Definição do produto não está completa!')
     }
 
-
-
 }
+/*------------------------------------------------------------------------------------Extra-----------------------------------------------------------------*/
 
+function zerarSelecaoDeProdutos(){/* essa função foi feita para que ao mudar o produto os outros campos sejam reiniciados para evitar 'BUGs'*/
 
-
-
-
-
-
-
-
-
-
-
-/* **************************************************************************** */
-
-
-function escolhaProduto(){
-    
-    let validacaoProdutoCamposPreenchidos = estaPronto()
-    
-
-    if (validacaoProdutoCamposPreenchidos === true) {
-            
-            let produtoString = document.getElementById('produto').value
-    let corProdutoString = document.getElementById('corProduto').value
-    let tamanhoProdutoString = document.getElementById('tamanhoProduto').value
-    let modeloProdutoString = document.getElementById('modeloProduto').value
-    let produtos = [produtoString +','+ corProdutoString +','+ tamanhoProdutoString +','+ modeloProdutoString]
-    let texto = document.getElementById('selecaoProdutos').value = produtos;
-
-
-
-
-        
-    }
-}
-
-// function validacaoTexto(){
-    
-//     let validacaoProdutoString = document.getElementById('produto').value
-//     let validacaoCorProdutoString = document.getElementById('corProduto').value
-//     let validacaoMamanhoProdutoString = document.getElementById('tamanhoProduto').value
-//     let validacaoModeloProdutoString = document.getElementById('modeloProduto').value
-
-//     if (validacaoProdutoString ==! 'vazio')
-// }
-
-   
-
-function resetarSelecaoDeProdutoListaDeCompra() {
-
-    document.getElementById("produto").value = "vazio";
-    document.getElementById("corProduto").value = "vazio";
+    document.getElementById("corProduto").value = 'vazio';
     document.getElementById("tamanhoProduto").value = "vazio";
     document.getElementById("modeloProduto").value = "vazio";
-
-    document.getElementById('corProduto').disabled = true;
-    document.getElementById('tamanhoProduto').disabled = true;
-    document.getElementById('modeloProduto').disabled = true;
-
 }
-
-function zerarSelecaoDeProdutos(){/* essa função foi feita para que ao mudar o produto os outros campos sejam reiniciados usando o document.getElementById atribuir o "vazio" e fazer que a seleção volte aos respectivos campos iniciais.*/
-
-document.getElementById("corProduto").value = 'vazio';
-    document.getElementById("tamanhoProduto").value = "vazio";
-
-    document.getElementById("modeloProduto").value = "vazio";
-    }

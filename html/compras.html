@@ -2,9 +2,10 @@
 <html>
     <head>
         <title>Camisas de Outro Mundo</title>    
-        <link href="../css/style.css" rel="stylesheet" type="text/css">
         <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
         <link rel="stylesheet" href="https://use.typekit.net/qnj1nsq.css">
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+
         <meta charset="UTF-8">
         <script type="text/javascript" src="../js/scrips.js"></script>
     </head>
@@ -126,14 +127,14 @@
                             <br>
                             <input type="text" class="linhaprodsel" id="textoSelecaoProdutos"  value="" readonly>
                             <br><br>
-                            <input type="button" onclick="comprarProduto()" value="Comprar"></imput>                           
+                            <input type="button" onclick="comprarProduto(1)" value="Comprar"></imput>                           
                             <div class="divvalor">
                                 <label for="rs">R$&nbsp</label>
                                 <input type="text"  id="precoProduto" value="" readonly class="impmedio"></imput>  
                             </div>                         
                         </fieldset>
                         <div class="elemdir">                         
-                            <textarea name="lista" class="listacompras" id="listaProdutos" readonly></textarea>
+                            <textarea name="lista" class="listacompras" id="listaProdutos" value=""readonly></textarea>
                             <br>
                             <br>
                             <div class="divvalor">
@@ -146,7 +147,7 @@
                         </div>
                     </fieldset>
                     <div class="divbotoes">                        
-                        <input type="submit" onclick="return estaPronto()" value="Continuar" target="" ></imput> 
+                        <input type="submit" onclick="return estaPronto()" value="Continuar" target=""></imput> 
                         <input type="button" value="Limpar" onclick="limparCampos()"></imput>                           
                     </div>
                 </form>    
