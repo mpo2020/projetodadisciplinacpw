@@ -122,7 +122,7 @@ function habilitaCor(){ /* Esta função usa resultado da função ehMascara par
 /*------------------------------------------------------------QUESTÃO 5--------------------------------------------------------------------------------------*/
 /*---------------------------------------------------------------(a)-----------------------------------------------------------------------------------------*/
 
-function estaPronto() { /* esse função ao ser chamada teste se todos os os campos da seleção de produtos estão preenchidos  caso sim retorna verdadeiro, caso não retorna falso. Também foi adicionado um teste para saber se era mascara ou camisa pois campos diferentes deviam esta preenchidos para cada produto.(para camisa produto, cor, tamanho, e modelo) e para (mascara produto e cor) para esse teste foi utilizado o retorno da função é ehMascara para diferenciar se era mascara ou camisa dentro desta função*/
+function estaPronto() { /* esse função ao ser chamada testa se todos os os campos da seleção de produtos estão preenchidos  caso sim retorna verdadeiro, caso não retorna falso. Também foi adicionado um teste para saber se era mascara ou camisa pois campos diferentes deviam esta preenchidos para cada produto.(para camisa produto, cor, tamanho, e modelo) e para (mascara produto e cor) para esse teste foi utilizado o retorno da função é ehMascara para diferenciar se era mascara ou camisa dentro desta função*/
 
     let tipoProdutoEstaPronto = ehMascara()
     let validacaoProduto;
@@ -212,8 +212,11 @@ function limparCampos() { /* essa função ao ser chamada clicando no botão lim
     document.getElementById("modeloProduto").value = "vazio";
     document.getElementById("precoProduto").value = "";
     document.getElementById("textoSelecaoProdutos").value = "";
+    document.getElementById("totalPreco").value = "";  
     document.getElementById("listaProdutos").value = "";
 
+    somaPrecos = 0
+    concatenacaoListaProdutos = ''
 
     document.getElementById('corProduto').disabled = true;
     document.getElementById('tamanhoProduto').disabled = true;
@@ -225,7 +228,7 @@ function limparCampos() { /* essa função ao ser chamada clicando no botão lim
 let somaPrecos = 0
 let concatenacaoListaProdutos = ''
 
-/* as duas variaveis acima foram declaradas em escopo global e atribuido valor a elas nesse escopo pois comprarProduto()*/
+/* as duas variaveis acima foram declaradas em escopo global e atribuido valor a elas ,pois se fossem declaradas no escopo de  comprarProduto() sempre que a função fosse chamada o valor inicial seria re-atribuido a elas.*/
 
 function comprarProduto() { /* essa função é chamada através do clique no botão comprar ela usa o return da função estaPronto() caso está resulte em true ela cria a lista de comrpa com o produto selecionado concatenando varios deles na <textarea> e joga o preço  para o total, e somando com o preço de cada produto escolhido, a função estaPronto() retorne falso um alert aparece na tela*/
     let comprarProdutoVerificacao = estaPronto()
